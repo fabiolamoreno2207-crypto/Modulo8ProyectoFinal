@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+</head>
+<body>
+<h1>Lista de Productos con WebClient</h1>
+
+<div th:each="producto : ${productos}">
+    <p th:text="${producto.id_producto + ' --> ' + producto.nombre}"></p>
+    <!-- enlace para ver detalle -->
+    <a th:href="@{/web/producto/{id}(id=${producto.id_producto})}">Ver detalle</a>
+    <!-- enlace para editar -->
+    <a th:href="@{/web/producto/{id}/editar(id=${producto.id_producto})}">Editar</a>
+    <!-- enlace para eliminar -->
+    <a th:href="@{/web/producto/{id}/eliminar(id=${producto.id_producto})}">Eliminar</a>
+</div>
+
+<!-- enlace para crear nuevo producto -->
+<a th:href="@{/web/producto/nuevo}">Nuevo Producto</a>
+
+</body>
+</html>

@@ -20,12 +20,25 @@ public class AppConfig {
 
 
     @Bean
-    public WebClient webClient(){
+    public WebClient usuarioWebClient(){
         //URL BASE del API REST Usuario
         String urlBase ="http://localhost:8080/api/v2/usuario";
         return WebClient.builder()
                 .baseUrl(urlBase)
                 .build();
+    }
 
+    @Bean
+    public WebClient parteWebClient() {
+        return WebClient.builder()
+                .baseUrl("http://localhost:8080/api/v2/parte")
+                .build();
+    }
+
+    @Bean
+    public WebClient productoWebClient() {
+        return WebClient.builder()
+                .baseUrl("http://localhost:8080/api/v2/producto")
+                .build();
     }
 }

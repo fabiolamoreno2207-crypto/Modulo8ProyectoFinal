@@ -24,7 +24,7 @@ public class Parte {
     private Integer stock;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "producto_id", nullable = false)
+    @JoinColumn(name = "producto_id", nullable =true)
     @JsonBackReference
     private Producto producto;
 

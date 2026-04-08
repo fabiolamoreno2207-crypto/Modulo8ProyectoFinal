@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Partes</title>
+</head>
+<body>
+<h1>Lista de Partes con WebClient</h1>
+
+<div th:each="parte : ${partes}">
+    <p th:text="${parte.id_parte + ' --> ' + parte.sku}"></p>
+    <!-- enlace para ver detalle -->
+    <a th:href="@{/web/parte/{id}(id=${parte.id_parte})}">Ver detalle</a>
+    <!-- enlace para editar -->
+    <a th:href="@{/web/parte/{id}/editar(id=${parte.id_parte})}">Editar</a>
+    <!-- enlace para eliminar -->
+    <a th:href="@{/web/parte/{id}/eliminar(id=${parte.id_parte})}">Eliminar</a>
+</div>
+
+<!-- enlace para crear nueva parte -->
+<a th:href="@{/web/parte/nueva}">Nueva Parte</a>
+
+</body>
+</html>

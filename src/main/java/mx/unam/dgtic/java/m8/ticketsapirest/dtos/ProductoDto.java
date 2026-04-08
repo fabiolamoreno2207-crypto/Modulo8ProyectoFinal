@@ -16,7 +16,7 @@ import lombok.*;
 public class ProductoDto {
 
     @Id
-    private Long id_parte;
+    private Long id_producto;
 
     @NotNull
     @NotBlank

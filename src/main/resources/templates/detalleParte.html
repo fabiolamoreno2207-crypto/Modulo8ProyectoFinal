@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Parte</title>
+</head>
+<body>
+<h1>Detalle de la Parte</h1>
+
+<div>
+    <p>ID: <span th:text="${parte.id_parte}"></span></p>
+    <p>SKU: <span th:text="${parte.sku}"></span></p>
+    <p>Descripción: <span th:text="${parte.descripcion}"></span></p>
+    <p>Ubicación: <span th:text="${parte.ubicacion}"></span></p>
+    <p>Stock: <span th:text="${parte.stock}"></span></p>
+    <a th:href="@{/web/parte}">Regresar a todas las partes</a>
+</div>
+
+</body>
+</html>
