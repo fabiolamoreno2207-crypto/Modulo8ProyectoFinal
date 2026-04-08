@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar usuario</title>
+</head>
+<body>
+<h1>Actualizar usuario</h1>
+
+<form th:action="@{/web/usuario/actualizar}"
+      method="POST"
+      th:object="${usuario}">
+    <!-- Campo oculto para el id -->
+    <input type="hidden" th:field="*{id}">
+
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}">
+    </div>
+    <div>
+        <label for="email">Correo:</label>
+        <input type="text" id="email" th:field="*{email}">
+    </div>
+    <div>
+        <label for="user">Usuario:</label>
+        <input type="text" id="user" th:field="*{user}">
+    </div>
+    <div>
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" th:field="*{clave}">
+    </div>
+    <div>
+        <button type="submit">Guardar cambios</button>
+    </div>
+</form>
+
+</body>
+</html>
